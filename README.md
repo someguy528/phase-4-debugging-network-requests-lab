@@ -62,12 +62,17 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: checked Network -> toys -> Preview && console of frontend, 
+  see #<NameError: uninitialized constant ToysController::Toys>,
+  check toys_controller.rb and see "Toy" class is misspelled as "Toys"
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How I debugged: see Unhandled Rejection (SyntaxError): Unexpected end of JSON input,
+  check toys_controller to see for render json method and content in "update" method, add render json and return value
+
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+  - How I debugged: see DELETE http://localhost:4000/toys/10 404 (Not Found) in console, check Network -> {toy} -> preview and see ActionController::RoutingError: No route matches [DELETE] \"/toys/10\, 
+  check routes.rb and add in :destroy method
